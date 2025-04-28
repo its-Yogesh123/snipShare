@@ -1,0 +1,8 @@
+Errors Logs :- 
+extension : zZ 1--
+fileManager : zZ2--
+friendManager : zZ3--
+toServer : zZ4--
+
+
+

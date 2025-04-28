@@ -1,0 +1,101 @@
+{
+  "name": "snipare",
+  "displayName": "Snip Share",
+  "description": "This Extension live share any File, Code(Selected) directly from one extension to another",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.6.0"
+  },
+  "icon": "assets/icon.png",
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "snipare.sendFile",
+        "title": "Send File",
+        "icon": {
+        "dark": "assets/darkSend.svg",
+        "light": "assets/send.svg"
+      }
+      },
+      {
+        "command": "snipare.sendCode",
+        "title": "Send Code"
+      },
+      {
+        "command": "snipare.changeName",
+        "title": "Change Name"
+      },
+      {
+        "command": "snipare.makeFriend",
+        "title": "Add Friends",
+        "icon": {
+          "dark": "assets/darkFriend.svg",
+          "light": "assets/lightFriend.svg"
+        }
+      },
+      {
+        "command": "snipare.blockFriend",
+        "title": "🚫 Block Friends"
+      },
+      {
+        "command": "snipare.unblockFriend",
+        "title": "🟢 Unblock Friends"
+      }
+      ],
+    "keybindings": [
+      {
+        "command": "snipare.sendFile",
+        "key": "ctrl+alt+r"           
+      },
+      {
+        "command": "snipare.sendCode",
+        "key": "ctrl+alt+up"           
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "snipare.sendFile",
+          "when": "editorTextFocus",
+          "group": "navigation@1"
+        }
+      ],
+      "editor/title/run": [
+        {
+          "command": "snipare.makeFriend",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        },
+        {
+          "command": "snipare.sendCode",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.99.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.23.0"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "socket.io-client": "^4.8.1",
+    "uuid": "^11.1.0"
+  }
+}
