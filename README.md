@@ -1,65 +1,47 @@
-# snipare README
-
-This is the README for your extension "snipare". After writing up a brief description, we recommend including the following sections.
+# Snip Share 
+![Icon](assets/icon.png)
 
 ## Features
+* Send File of any language to any friend
+* Send Selected Code/Message  of any language to any friend
+* Add Friends via token module
+* Block/Unblock Friend
+* Can Customize Friend's Name
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Command & Shortcut Keys
+- To Send Selected Code : Open Command Palette via`Cmd/Ctrl + Shift + p` then type `Send Code`.
+  - (`Ctrl + option + Up` on macOS or `Ctrl + Alt + Up` on Windows and Linux)
+- To Send File `Cmd/Ctrl + Shift + p` then type `Send File`
+  - (`Ctrl + option + r` on macOS or `Ctrl + Alt + r` on Windows and Linux)
+- To Add Friends  `Cmd/Ctrl + Shift + p` then type `Add Friends`
+- To Block Friends  `Cmd/Ctrl + Shift + p` then type `Block Friend`
+- To Unblock Friends  `Cmd/Ctrl + Shift + p` then type `Unblock Friend`
+- To Change Name of Friend  `Cmd/Ctrl + Shift + p` then type `Change Name`
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+> Can Customize the shortcuts of commands accordingly
+# Usages
+### 1. How to make Connections
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* Vscode Version must more than  `1.6.0`
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+Initial release of Snip Share
 
 ---
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
 ## For more information
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+* [Error Logs](http://snipshare.yolab.in)
+* [Repo](https://github.com/its-Yogesh123/snipShare.git)
+* Support : `support@yolab.in`
+
+## Team 
+- Yogesh Kumar
+  - [LinkedIn](www.linkedin.com/in/yogeshkumardev123)
+  - NIT Kurukshetra CSE Student
 
 **Enjoy!**
