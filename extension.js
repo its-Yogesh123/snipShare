@@ -10,9 +10,9 @@ const backend = require("./toServer");
 function activate(context) {
 	// global data initialization
 	const globalState=context.globalState;
-	const URL = "http://localhost:8000";     // main path of websocket connection
-	const tokenURL="http://localhost:8000/generate_token";
-	const makeFriendURL="http://localhost:8000/engage";
+	const URL = "https://snipshare.yolab.in";     // main path of websocket connection
+	const tokenURL="https://snipshare.yolab.in/generate_token";
+	const makeFriendURL="https://snipshare.yolab.in/engage";
 	let uid=globalState.get("snipShare_uid");
 	let uName = globalState.get("snipare_uName");
 	// globalState.update("friends",undefined);                                         // for extension testing

@@ -41,11 +41,11 @@
       },
       {
         "command": "snipare.blockFriend",
-        "title": "🚫 Block Friends"
+        "title": "🚫 Block Friend"
       },
       {
         "command": "snipare.unblockFriend",
-        "title": "🟢 Unblock Friends"
+        "title": "🟢 Unblock Friend"
       }
       ],
     "keybindings": [
