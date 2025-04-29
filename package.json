@@ -1,11 +1,11 @@
 {
   "name": "snipare",
-  "displayName": "Snip Share",
+  "displayName": "SnipShare",
   "description": "This Extension live share any File, Code(Selected) directly from one extension to another",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "publisher": "Yogesh-dev9",
   "engines": {
-    "vscode": "^1.99.0"
+    "vscode": "^1.30.0"
   },
   "icon": "assets/icon.png",
   "categories": [
@@ -97,7 +97,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
-    "@types/vscode": "^1.99.0",
+    "@types/vscode": "^1.30.0",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1",
     "eslint": "^9.23.0"

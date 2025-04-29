@@ -24,12 +24,12 @@
 
 ## Requirements
 
-* Vscode Version must more than  `1.99.0`
+* Vscode Version must more than  `1.30.0`  or Vscode install after `2018`
 
 ## Release Notes
 
-### 1.0.0
 
+### 1.0.0
 Initial release of Snip Share
 
 ---
@@ -41,7 +41,7 @@ Initial release of Snip Share
 
 ## Team 
 - Yogesh Kumar
-  - [LinkedIn](www.linkedin.com/in/yogeshkumardev123)
+  - [LinkedIn](https://www.linkedin.com/in/yogeshkumardev123)
   - NIT Kurukshetra CSE Student
 
 **Enjoy!**

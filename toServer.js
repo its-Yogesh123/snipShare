@@ -24,7 +24,7 @@ async function getSelectedFriends(friendManager){
         return friends_uid.map((selected) => selected.description);    // must ()
     }
     catch(err){
-        console.log(` 🔴 Error code (Snip Share) : zZ-4Util1`);
+        console.log(` 🔴 Error code (Snip Share) : zZ-4Util1 \n ${err}`);
     }
 }
 // http Server handling
@@ -51,8 +51,8 @@ function generateToken(url,user){
             },5*60*1000);
 		})
 		.catch(err =>{
-			vscode.window.showErrorMessage(`Token Generation Failed!!!! | Error Code zZ-401` );
-            console.log(` 🔴 Error code (Snip Share) : zZ-401`);
+			vscode.window.showErrorMessage(`Token Generation Failed!!!! | Error Code zZ-401 ${err}` );
+            console.log(` 🔴 Error code (Snip Share) : zZ-401\n ${err}`);
 		});
 }
 /** Error Code 2
@@ -73,7 +73,7 @@ function makeFriend(URL,token,user,friendManager){
 		})
 		.catch(err =>{
 			vscode.window.showErrorMessage(`Error zZ-402`);
-            console.log(` 🔴 Error code (Snip Share) : zZ-402`);
+            console.log(` 🔴 Error code (Snip Share) : zZ-402\n ${err}`);
 		});
 }
 // websocket connetions handling
@@ -110,7 +110,7 @@ function connectToServer(url,uid,friendManager){
         console.log('Connection Lost');
     });
     socket.on('error', (error) => {
-        console.error(' 🔴 Socket.IO connection error: Server404', error);
+        console.error(` 🔴 Socket.IO connection error: Server404 \n ${error}`);
     });
 }
 /** Error Code 3
@@ -128,7 +128,7 @@ async function sendCode(friendManager){
     }
     }
     catch(err){
-        console.log(` 🔴 Error code (Snip Share) : zZ-403`);
+        console.log(` 🔴 Error code (Snip Share) : zZ-403\n ${err}`);
     }
 }
 /** Error Code 4
@@ -143,7 +143,7 @@ async function sendFile(friendManager){
             socket.emit("vscodeSendFile",{uid:uid,file:file});
         });
    }catch(err){
-    console.log(` 🔴 Error code (Snip Share) : zZ-404`);
+    console.log(` 🔴 Error code (Snip Share) : zZ-404\n ${err}`);
    }
 }
 // commands 
@@ -163,7 +163,7 @@ function registerCommands(context) {
     });
     context.subscriptions.push(copyTokenCommand);
    }catch(err){
-    console.log(` 🔴 Error code (Snip Share) : zZ-405`);
+    console.log(` 🔴 Error code (Snip Share) : zZ-405\n ${err}`);
    }
 }
 module.exports={connectToServer,sendCode,sendFile,generateToken,makeFriend,registerCommands};

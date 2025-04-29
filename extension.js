@@ -10,9 +10,12 @@ const backend = require("./toServer");
 function activate(context) {
 	// global data initialization
 	const globalState=context.globalState;
-	const URL = "https://snipshare.yolab.in";     // main path of websocket connection
-	const tokenURL="https://snipshare.yolab.in/generate_token";
-	const makeFriendURL="https://snipshare.yolab.in/engage";
+	// const URL = "https://snipshare.yolab.in";     // main path of websocket connection
+	// const tokenURL="https://snipshare.yolab.in/generate_token";
+	// const makeFriendURL="https://snipshare.yolab.in/engage";
+	const URL = "https://polyester-tattered-bestseller.glitch.me";     // deployment issue
+	const tokenURL="https://polyester-tattered-bestseller.glitch.me/generate_token";
+	const makeFriendURL="https://polyester-tattered-bestseller.glitch.me/engage";
 	let uid=globalState.get("snipShare_uid");
 	let uName = globalState.get("snipare_uName");
 	// globalState.update("friends",undefined);                                         // for extension testing
