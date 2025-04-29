@@ -2,7 +2,8 @@
   "name": "snipare",
   "displayName": "Snip Share",
   "description": "This Extension live share any File, Code(Selected) directly from one extension to another",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "publisher": "Yogesh-dev9",
   "engines": {
     "vscode": "^1.99.0"
   },
@@ -80,6 +81,14 @@
       ]
     }
   },
+  "homepage": "https://snipshare.yolab.in",
+"repository": {
+  "type": "git",
+  "url": "https://github.com/its-Yogesh123/snipShare.git"
+},
+"bugs": {
+  "url": "https://snipshare.yolab.in"
+},
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
