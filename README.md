@@ -24,7 +24,7 @@
 
 ## Requirements
 
-* Vscode Version must more than  `1.6.0`
+* Vscode Version must more than  `1.99.0`
 
 ## Release Notes
 
