@@ -4,7 +4,7 @@
   "description": "This Extension live share any File, Code(Selected) directly from one extension to another",
   "version": "1.0.0",
   "engines": {
-    "vscode": "^1.6.0"
+    "vscode": "^1.99.0"
   },
   "icon": "assets/icon.png",
   "categories": [
