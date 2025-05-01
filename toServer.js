@@ -39,7 +39,7 @@ function generateToken(url,user){
 		axios.post(url,{"user" : user})
 		.then((parcel)=>{
             latestToken=parcel.data.token;
-			vscode.window.showInformationMessage(`Token Generated : ${latestToken} valid for 10 minutes`)
+			vscode.window.showInformationMessage(`Token Generated : ${latestToken} valid for 5 minutes`)
             if(currentStatusBarItem) currentStatusBarItem.dispose();
             currentStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 0);
             currentStatusBarItem.text = `Snipare Token : ${latestToken}`;
@@ -91,11 +91,11 @@ function connectToServer(url,uid,friendManager){
     // });
     socket.on("receiveFile",(parcel)=>{       // parcel is {uid,file}
         const sender = friendManager.get(parcel.uid);
-        if(sender.state === "active" )fileManager.createFile(sender.name,parcel.file);
+        if(sender && sender.state === "active" )fileManager.createFile(sender.name,parcel.file);
     });
     socket.on("receiveCode",(parcel)=>{       // parcel is {uid,text}
         const sender = friendManager.get(parcel.uid);
-        if(sender.state === "active" )fileManager.updateBuffer(sender.name,parcel.code);
+        if(sender && sender.state === "active" )fileManager.updateBuffer(sender.name,parcel.code);
     });
     socket.on("newFriend",(user)=>{
         if(!friendManager.has(user.uid)){
@@ -114,16 +114,20 @@ function connectToServer(url,uid,friendManager){
     });
 }
 /** Error Code 3
- * 
+ * @param {string} myUID 
  * @param {Object} friendManager 
  */
-async function sendCode(friendManager){
+async function sendCode(myUID,friendManager){
     try{
         const code = fileManager.getSelectedText();
         if(code){
             const friends = await getSelectedFriends(friendManager);
             friends.forEach(uid => {
-                socket.emit("vscodeSendCode",{uid:uid,code:code});
+                const parcel = {
+                    recipientUID:uid,
+                    parcel : {uid:myUID,code:code},
+                };
+                socket.emit("vscodeSendCode",parcel);
         });
     }
     }
@@ -132,15 +136,19 @@ async function sendCode(friendManager){
     }
 }
 /** Error Code 4
- * 
+ * @param {String} myUID 
  * @param {Object} friendManager 
  */
-async function sendFile(friendManager){
+async function sendFile(myUID,friendManager){
    try{
         const friends = await getSelectedFriends(friendManager);
         const file = fileManager.getFile();
         friends.forEach(uid => {
-            socket.emit("vscodeSendFile",{uid:uid,file:file});
+            const parcel = {
+                recipientUID:uid,
+                parcel : {uid:myUID,file:file},
+            };
+            socket.emit("vscodeSendFile",parcel);
         });
    }catch(err){
     console.log(` 🔴 Error code (Snip Share) : zZ-404\n ${err}`);

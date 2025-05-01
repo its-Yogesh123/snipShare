@@ -18,7 +18,7 @@ function activate(context) {
 	const makeFriendURL="https://polyester-tattered-bestseller.glitch.me/engage";
 	let uid=globalState.get("snipShare_uid");
 	let uName = globalState.get("snipare_uName");
-	// globalState.update("friends",undefined);                                         // for extension testing
+	// globalState.update("friends_test",undefined);                                   // for extension testing
 	const friendManager = new FriendManager(context);     // friend list
 	// generate new UID id not exists
 	if(!uid){
@@ -78,10 +78,10 @@ function activate(context) {
 		if(friend && newName)friendManager.update(friend.description,{name:newName});
 	});
 	const sendFileCommand = vscode.commands.registerCommand("snipare.sendFile",()=>{
-		backend.sendFile(friendManager);
+		backend.sendFile(uid,friendManager);
 	});
 	const sendCodeCommand = vscode.commands.registerCommand("snipare.sendCode",()=>{
-		backend.sendCode(friendManager);
+		backend.sendCode(uid,friendManager);
 	});
 	// commands 
 	backend.registerCommands(context);

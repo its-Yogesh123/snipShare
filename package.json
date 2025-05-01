@@ -2,7 +2,7 @@
   "name": "snipare",
   "displayName": "SnipShare",
   "description": "This Extension live share any File, Code(Selected) directly from one extension to another",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "publisher": "Yogesh-dev9",
   "engines": {
     "vscode": "^1.30.0"
@@ -70,7 +70,6 @@
       "editor/title/run": [
         {
           "command": "snipare.makeFriend",
-          "when": "editorTextFocus",
           "group": "navigation"
         },
         {
