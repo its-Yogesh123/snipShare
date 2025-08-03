@@ -13,12 +13,13 @@ function activate(context) {
 	// const URL = "https://snipshare.yolab.in";     // main path of websocket connection
 	// const tokenURL="https://snipshare.yolab.in/generate_token";
 	// const makeFriendURL="https://snipshare.yolab.in/engage";
-	const URL = "https://polyester-tattered-bestseller.glitch.me";     // deployment issue
-	const tokenURL="https://polyester-tattered-bestseller.glitch.me/generate_token";
-	const makeFriendURL="https://polyester-tattered-bestseller.glitch.me/engage";
+	const URL = "https://snipshareserver-y504.onrender.com";     // websockets server
+	const tokenURL="https://snipshareserver-y504.onrender.com/generate_token";
+	const makeFriendURL="https://snipshareserver-y504.onrender.com./engage";
 	let uid=globalState.get("snipShare_uid");
 	let uName = globalState.get("snipare_uName");
-	// globalState.update("friends_test",undefined);                                   // for extension testing
+	// globalState.update("friends",undefined);                                   // for extension testing
+	// globalState.update("snipare_uName",undefined);                                   // for extension testing
 	const friendManager = new FriendManager(context);     // friend list
 	// generate new UID id not exists
 	if(!uid){

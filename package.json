@@ -2,7 +2,7 @@
   "name": "snipare",
   "displayName": "SnipShare",
   "description": "Extension that enables real-time sharing of selected code or files directly between users' editors.",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "publisher": "Yogesh-dev9",
   "engines": {
     "vscode": "^1.30.0"

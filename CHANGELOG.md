@@ -1,6 +1,9 @@
 # Change Log
 ## [Unreleased]
 
+## [1.0.8] - 3/08/2025  
+- v1.0.6 Server Relocation
+  - Update Server/API Endpoints
 ## [1.0.6] - 1/05/2025  
 - v1.0.5 Not Wroking/ Bugs 
   - Fix APIs Endpoints
