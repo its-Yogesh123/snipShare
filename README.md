@@ -41,10 +41,12 @@ This VS Code extension aims to bridge that gap by enabling users to share code a
 ## Requirements
 
 * Vscode Version must more than  `1.30.0`  or Vscode install after `2018`
-* Use SnipShare version after `1.0.6` before this extension will not work
+* Use SnipShare version after `1.0.8` before this extension will not work
 
 ## Release Notes
 
+### 1.0.8
+* Latest Version
 ### 1.0.6
 * Functional Version
 ### 1.0.0
@@ -55,13 +57,12 @@ This VS Code extension aims to bridge that gap by enabling users to share code a
 
 ## For more information
 
-* [Error Logs](http://snipshare.yolab.in/)
+* [Error Logs](http://snipshare.yolab.in/error_log)
 * Support : `support@yolab.in`
 
 ## Team 
 - Yogesh Kumar
   - [LinkedIn](https://www.linkedin.com/in/yogeshkumardev123)
   - [Profile](https://github.com/its-Yogesh123)
-  - Wanna Join ?? DM on linkedIn
 
 **Enjoy!**
