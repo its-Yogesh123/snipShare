@@ -73,7 +73,7 @@ function makeFriend(URL,token,user,friendManager){
 		})
 		.catch(err =>{
 			vscode.window.showErrorMessage(`Error zZ-402`);
-            console.log(` 🔴 Error code (Snip Share) : zZ-402\n ${err}`);
+            console.log(` 🔴 Error code (Snip Share) : zZ-402\n ${JSON.stringify(err)} ||  ${err.response.data.error}`);
 		});
 }
 // websocket connetions handling

@@ -1,6 +1,10 @@
 # Change Log
 ## [Unreleased]
 
+## [2.0.0] - 3/08/2025  
+- DNS Configuration and bugs manage
+  - Fix bugs in Making Friends
+  - Working
 ## [1.0.8] - 3/08/2025  
 - v1.0.6 Server Relocation
   - Update Server/API Endpoints
