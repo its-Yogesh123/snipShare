@@ -11,7 +11,7 @@ const path=require("path");
  * 
  * @returns {string} path
  */
-function getCurrentFolderPath() { 
+function getCurrentFolderPath() {
     const editor = vscode.window.activeTextEditor;
     if (editor) {
         const filePath = editor.document.uri.fsPath;
