@@ -2,7 +2,7 @@
   "name": "snipare",
   "displayName": "SnipShare",
   "description": "Extension that enables real-time sharing of selected code or files directly between users' editors.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "publisher": "Yogesh-dev9",
   "engines": {
     "vscode": "^1.30.0"
@@ -12,17 +12,27 @@
     "Programming Languages",
     "Other"
   ],
-  "activationEvents": ["onStartupFinished"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./extension.js",
   "contributes": {
+    "configuration":{
+      "title": "Servre Data",
+      "properties": {
+        "snipare.URL":{"type":"string","description": "Server URL","default": "https://snipshareserver-y504.onrender.com"},
+        "snipare.tokenURL":{"type":"string","description": "URL to generate tokenURL","default": "https://snipshareserver-y504.onrender.com/generate_token"},
+        "snipare.makeFriendURL":{"type":"string","description": "URL to make Friend","default": "https://snipshareserver-y504.onrender.com/engage"}
+      }
+    },
     "commands": [
       {
         "command": "snipare.sendFile",
         "title": "Send File",
         "icon": {
-        "dark": "assets/darkSend.svg",
-        "light": "assets/send.svg"
-      }
+          "dark": "assets/darkSend.svg",
+          "light": "assets/send.svg"
+        }
       },
       {
         "command": "snipare.sendCode",
@@ -48,15 +58,15 @@
         "command": "snipare.unblockFriend",
         "title": "🟢 Unblock Friend"
       }
-      ],
+    ],
     "keybindings": [
       {
         "command": "snipare.sendFile",
-        "key": "ctrl+alt+r"           
+        "key": "ctrl+alt+r"
       },
       {
         "command": "snipare.sendCode",
-        "key": "ctrl+alt+up"           
+        "key": "ctrl+alt+up"
       }
     ],
     "menus": {
@@ -81,13 +91,13 @@
     }
   },
   "homepage": "https://snipshare.yolab.in",
-"repository": {
-  "type": "git",
-  "url": "https://github.com/its-Yogesh123/snipShare.git"
-},
-"bugs": {
-  "url": "https://snipshare.yolab.in"
-},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/its-Yogesh123/snipShare.git"
+  },
+  "bugs": {
+    "url": "https://snipshare.yolab.in"
+  },
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
@@ -103,6 +113,7 @@
   },
   "dependencies": {
     "axios": "^1.9.0",
+    "dotenv": "^17.2.3",
     "socket.io-client": "^4.8.1",
     "uuid": "^11.1.0"
   }

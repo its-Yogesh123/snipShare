@@ -44,9 +44,16 @@ This VS Code extension aims to bridge that gap by enabling users to share code a
 * Use SnipShare version after `1.0.8` before this extension will not work
 
 ## Release Notes
+### [2.0.1] - 14 Jan 2026  
+- Restructuring
+  - URLs relocation
 
+### [2.0.0] - 3/08/2025  
+- DNS Configuration and bugs manage
+  - Fix bugs in Making Friends
+  - Working
 ### 1.0.8
-* Latest Version
+* Depriciated
 ### 1.0.6
 * Functional Version
 ### 1.0.0

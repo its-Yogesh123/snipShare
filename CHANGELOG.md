@@ -1,6 +1,10 @@
 # Change Log
 ## [Unreleased]
 
+### [2.0.1] - 14 Jan 2026  
+- Restructuring
+  - URLs relocation
+  - Fix Server's URL Bugs 
 ## [2.0.0] - 3/08/2025  
 - DNS Configuration and bugs manage
   - Fix bugs in Making Friends
