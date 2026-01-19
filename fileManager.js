@@ -13,9 +13,15 @@ const path=require("path");
  */
 function getCurrentFolderPath() {
     const editor = vscode.window.activeTextEditor;
-    if (editor) {
+    if(editor) {
         const filePath = editor.document.uri.fsPath;
         return path.dirname(filePath); // returns the folder of the active file
+    }
+    else{        // of focus is not on file then currently open root folder will be path
+        const workspaceFolders = vscode.workspace.workspaceFolders;
+        if (workspaceFolders && workspaceFolders.length > 0) {
+            return workspaceFolders[0].uri.fsPath;
+        }else return null;
     }
 }
 
