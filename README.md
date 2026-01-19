@@ -5,6 +5,22 @@
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.x-brightgreen.svg)](https://nodejs.org/)
 [![Status](https://img.shields.io/badge/status-active-success.svg)](#)
 
+## Table of Contents
+
+- [SnipShare](#snipshare)
+- [Features](#features)
+- [Upcoming Features](#upcoming-features)
+- [Usage](#usage)
+  - [Create Connections (Add Friends)](#1-create-connections-add-friends)
+  - [Send Files](#2-send-files)
+  - [Send Code Snippets](#3-send-code-snippets)
+  - [Block or Unblock Friends](#4-block-or-unblock-friends)
+- [Requirements](#requirements)
+- [Release Notes](#release-notes)
+- [Additional Resources](#additional-resources)
+- [Team](#team)
+
+
 # SnipShare
 
 **SnipShare** is a VS Code extension that enables seamless sharing of code snippets and files directly between VS Code instances.  
