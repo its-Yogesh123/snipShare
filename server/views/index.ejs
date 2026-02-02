@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    function connect(){
+    const socket=io({query :{"uid":document.getElementById('uid1').value}});   // correct  for browser in NODE js
+    console.log(`id is ${socket.id}`);        // id is not present here
+    socket.on("connect",()=>{
+        console.log(socket.id);
+    });
+    // socket.emit("code_one_vsClient",{'code' : "LKLKFLKNF", "uid" : "lkadiohfief"});
+    // socket.on("code",(msg)=>{
+    //     console.log(msg);
+    // });
+    // function send(){
+    //     socket.emit("code_one_vsClient",{'code':document.getElementById("code").value, "uid" : document.getElementById("uid").value});
+    // }
+    socket.on("receive_code",(code)=>{
+        console.log(code);
+    });
+    }
+</script>
+<body>
+    UID ME <input type="text" name="" id="uid1"> <br>
+    <button onclick="connect()">Connect</button> <br>
+    <!-- Code <input type="text" name="" id="code"> <br>
+    Uid <input type="text" name="" id="uid">
+    <button onclick="send()">Send</button> -->
+       <form method="POST" action="/engage">
+        Code <input type="text" name="token" id="token"> <br>
+        Uid <input type="text" name="uid" id="uid">
+        Name <input type="text" name="name" id="name">
+        <input type="submit" value="make Friend">
+       </form>
+</body>
+</html>
