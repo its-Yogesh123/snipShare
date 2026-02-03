@@ -1,80 +1,45 @@
-require('dotenv').config(); 
-const http= require("http");
-const express= require("express");
-const path=require("path");
-const PORT=process.env.PORT;
+import dotenv from 'dotenv'
+import http from "http";
+import initSockets from './socketServer.js';
+import  express from "express";
+import  path from "path";
+
+dotenv.config(); 
+const PORT=process.env.PORT || 8000;
+// --
+/** *****************🟢 Server Setup Section 🟢*******************/
+// --
 const app=express();
-const {Server}=require("socket.io");
-const { json } = require("body-parser");
 const server = http.createServer(app);
+const io = initSockets(server)
+
+/** *****************🔴 Section END 🔴*******************/
+
 app.set("view engine","ejs");
 app.set("views",path.resolve("./views"));
-const io=new Server(server)
-// Middlewares
+
+// --
+/** *****************🟢 Middleware Section 🟢*******************/
+// --
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// --- Main Memory Storage 
+
+
+
+// --
+/** *****************🟢 Server Memory Section 🟢*******************/
+// --
+
 const users={};        // to map uid (permanent) -> socket-id (temp)
 const activeTokens=new Map();
-io.on("connection",(client)=>{
-    //  mapping after connection established
-    // client.on("register",(uid)=>{               // mapping new connections with  socket ids
-    //     users[uid]=client.id;
-    //     console.log(uid);
-    // });
-    //  mapping during handshake via query
-    const uid = client.handshake.query.uid;
-    users[uid]=client.id;
-    console.log("Connection request");
-    client.on("code_one_vsClient",(obj)=>{
-        const target=users[obj.uid];
-        if(target && io.sockets.sockets.has(target)){
-            io.to(target).emit("receive_code",obj.code);
-        }
-    });
-    // for file
-    client.on("vscodeSendFile",(parcel)=>{
-        io.to(users[parcel.recipientUID]).emit("receiveFile",parcel.parcel);
-    });
-    // code 
-    client.on("vscodeSendCode",(parcel)=>{
-        io.to(users[parcel.recipientUID]).emit("receiveCode",parcel.parcel);
-    });
-});
-//  utility function
-function generate_Token(){
-    let value="ABmnbvcxCDEFzqwertyGHIZKLMNOuioplPQRSTkjhgasdf";
-    let token="";
-    for(let i=0;i<5;i++){
-        token+=  value.charAt(Math.floor((Math.random() * value.length)));
-    }
-    return token;
-}
-function activateToken(user){
-    // let token = generate_Token();      // do not follow DRY Principle 
-    // while(activeTokens.has(token)){
-    //     token=generate_Token();
-    // }
-    let token ;     // this approach follow DRY principle
-    do{
-        token=generate_Token();     // only one time to write generate_Token function
-    }while(activeTokens.has(token));
-    const id=setTimeout(()=>{
-        activeTokens.delete(token);
-    },10*60*1000);
-    activeTokens.set(token,user);
-    return token;
-}
+/** *****************🔴 Section END 🔴*******************/
+
 
 // to handle HTTP requests
 app.get('/admin',(req,res)=>{
     res.render("index")
 });
-app.post('/generate_token',(req,res)=>{
-    const {user}=req.body;
-    const token=activateToken(user);
-    return res.status(200).json({"token":token});
-});
+app.post('/generate_token',);
 app.post('/engage',(req,res)=>{
     const token = req.body.token;
     let user = req.body.user;
@@ -94,4 +59,5 @@ app.post('/engage',(req,res)=>{
 app.get("/",(req,res)=>{
     res.render("home");
 });
-server.listen(PORT,()=>{console.log(`Server Started at ${PORT}`)});
+
+app.listen(PORT,()=>{console.log(`Server Started at ${PORT}`)});
