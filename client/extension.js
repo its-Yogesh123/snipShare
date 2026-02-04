@@ -17,9 +17,6 @@ function activate(context) {
 	const URL = vscode.workspace.getConfiguration('snipare').get("URL");
 	const tokenURL=vscode.workspace.getConfiguration('snipare').get("tokenURL");
 	const makeFriendURL=vscode.workspace.getConfiguration('snipare').get("makeFriendURL");
-	console.log(` Url is this ${URL}`);
-	console.log(tokenURL);
-	console.log(makeFriendURL);
 	// --
 	let uid=globalState.get("snipShare_uid");
 	let uName = globalState.get("snipare_uName");

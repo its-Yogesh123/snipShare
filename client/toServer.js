@@ -46,7 +46,7 @@ function generateToken(url,user){
             currentStatusBarItem.tooltip = 'Click To Copy';
             currentStatusBarItem.show();
             currentStatusBarItem.command = 'snipare.copyToken';  
-            setTimeout(()=>{               // remove token after expiring time (10 Min)
+            setTimeout(()=>{               // remove token after expiring time (5 Min)
                 currentStatusBarItem.dispose();
             },5*60*1000);
 		})

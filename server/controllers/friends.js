@@ -1,5 +1,8 @@
 //  store all tokens
-activeTokens = new Map();
+import {getIO} from "../socketServer"
+import {activeTokens} from "../store/token.store"
+import {uidTosocket} from "../store/uid.store"
+/********************Section End************ */
 
 /******************** Utility function ******************* */
 function generateToken(){
@@ -11,7 +14,7 @@ function generateToken(){
     return token;
 }
 
-function activateToken(user,activeTokens){
+function activateToken(user){
     let token;     // this approach follow DRY principle
     do{
         token=generateToken();     // only one time to write generate_Token function
@@ -36,15 +39,16 @@ export const makeFriend = (req,res)=>{
     const body = req.body;
     const token = body.token;
     let user = body.user;
+    const io = getIO();
     if(!user) user={name:body.name,uid:body.uid};
     if(activeTokens.has(token)){
-        const targetUser=activeTokens.get(token);    // get uid of token_generator_user
-        const target_socket_id=users[targetUser.uid];
+        const targetUser=activeTokens.get(token);    // get user which have generated the token
+        const target_socket_id=uidTosocket[targetUser.uid];
         if(target_socket_id && io.sockets.sockets.has(target_socket_id)){
             io.to(target_socket_id).emit("newFriend",user);
-            res.json({"user":targetUser});
+            res.status(200).json({"user":targetUser});
         }
-        else res.status(404),json({"error":"No user Found / User is Offline"});
+        else res.status(404).json({"error":"No user Found / User is Offline"});
     }else{
         res.status(404).json({"status":"Token Expired"});
     }
