@@ -1,5 +1,5 @@
 [![Version](https://img.shields.io/badge/version-2.1.1-green.svg)](#)
-[![VS Code Extension](https://img.shields.io/badge/VS%20Code-Extension-blue.svg)](https://code.visualstudio.com/)
+[![VS Code ](https://img.shields.io/badge/VS%20Code->=1.3.x-blue.svg)](https://code.visualstudio.com/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg)](#)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.x-brightgreen.svg)](https://nodejs.org/)
@@ -113,7 +113,7 @@ The file will be sent to the selected friends.
 ## Requirements
 
 - VS Code version **1.30.0 or later**
-- SnipShare version **1.0.8 or higher**  
+- SnipShare version **2.* or higher**  
   (Earlier versions are not supported)
 
 ---

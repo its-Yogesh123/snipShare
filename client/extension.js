@@ -11,12 +11,12 @@ const backend = require("./toServer");
 function activate(context) {
 	// global data initialization
 	const globalState=context.globalState;
-	// const URL = "https://snipshareserver-y504.onrender.com";     // websockets server
-	// const tokenURL="https://snipshareserver-y504.onrender.com/generate_token";
-	// const makeFriendURL="https://snipshareserver-y504.onrender.com/engage";
-	const URL = vscode.workspace.getConfiguration('snipare').get("URL");
-	const tokenURL=vscode.workspace.getConfiguration('snipare').get("tokenURL");
-	const makeFriendURL=vscode.workspace.getConfiguration('snipare').get("makeFriendURL");
+	const URL = "http://localhost:8000";     // websockets server
+	const tokenURL="http://localhost:8000/api/token";
+	const makeFriendURL="http://localhost:8000/api/friend";
+	// const URL = vscode.workspace.getConfiguration('snipare').get("URL");
+	// const tokenURL=vscode.workspace.getConfiguration('snipare').get("tokenURL");
+	// const makeFriendURL=vscode.workspace.getConfiguration('snipare').get("makeFriendURL");
 	// --
 	let uid=globalState.get("snipShare_uid");
 	let uName = globalState.get("snipare_uName");

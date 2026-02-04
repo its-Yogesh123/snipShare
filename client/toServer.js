@@ -86,9 +86,9 @@ function makeFriend(URL,token,user,friendManager){
  */
 function connectToServer(url,uid,friendManager){
     socket=io(url,{query:{uid:uid}});
-    // socket.on("connect",()=>{
-    //     vscode.window.showInformationMessage(`Connected ${socket.id}`);
-    // });
+    socket.on("connect",()=>{
+       console.log("Connected");
+    });
     socket.on("receiveFile",(parcel)=>{       // parcel is {uid,file}
         const sender = friendManager.get(parcel.uid);
         if(sender && sender.state === "active" )fileManager.createFile(sender.name,parcel.file);
@@ -127,7 +127,7 @@ async function sendCode(myUID,friendManager){
                     recipientUID:uid,
                     parcel : {uid:myUID,code:code},
                 };
-                socket.emit("vscodeSendCode",parcel);
+                socket.emit("codeCodeSnip",parcel);
         });
     }
     }
@@ -148,7 +148,7 @@ async function sendFile(myUID,friendManager){
                 recipientUID:uid,
                 parcel : {uid:myUID,file:file},
             };
-            socket.emit("vscodeSendFile",parcel);
+            socket.emit("codeFile",parcel);
         });
    }catch(err){
     console.log(` 🔴 Error code (Snip Share) : zZ-404\n ${err}`);
