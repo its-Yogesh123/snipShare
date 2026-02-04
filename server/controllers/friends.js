@@ -1,7 +1,7 @@
 //  store all tokens
-import {getIO} from "../socketServer"
-import {activeTokens} from "../store/token.store"
-import {uidTosocket} from "../store/uid.store"
+import {getIO} from "../socketServer.js"
+import {activeTokens} from "../store/token.store.js"
+import {uidTosocket} from "../store/uid.store.js"
 /********************Section End************ */
 
 /******************** Utility function ******************* */
@@ -30,12 +30,14 @@ function activateToken(user){
 
 
 export const createNewToken = (req,res)=>{
+    console.log("Token Generation Request received !!! ");
     const {user}=req.body;
     const token=activateToken(user);
     return res.status(200).json({"token":token});
 }
 
 export const makeFriend = (req,res)=>{
+    console.log("Token Generation Request received !!! ");
     const body = req.body;
     const token = body.token;
     let user = body.user;

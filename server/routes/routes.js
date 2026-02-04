@@ -1,8 +1,12 @@
 import {Router} from "express"
-const rounter = Router();
+import {createNewToken,makeFriend} from "../controllers/friends.js"
+export const router = Router();
 
 
-router.post('/home',(req,res)=>{});
-router.get('/token',(req,res)=>{});
-router.post('/friend',(req,res)=>{});
-router.post('/admin',(req,res)=>{});
+router.get('/home',(req,res)=>{res.render("index")});
+router.get('/admin',(req,res)=>{});
+
+router.post('/token',createNewToken);
+router.post('/friend',makeFriend);
+
+

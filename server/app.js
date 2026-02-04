@@ -1,11 +1,18 @@
+
 import dotenv from 'dotenv'
 import http from "http";
-import {initSockets} from "./socketServer";
+import path from 'path';
+import {initSockets} from "./socketServer.js";
 import  express from "express";
-import  path from "path";
-
+import {router} from "./routes/routes.js"
 /** *****************🟢 Development Section 🟢*******************/
-
+// import { Server } from 'socket.io';
+// const app=express();
+// const server = http.createServer(app);
+// const io = new Server(server);
+// io.on("connection",(client)=>{
+//     console.log("Connection Request");
+// });
 // --
 /** *****************🟢 Server Setup Section 🟢*******************/
 // --
@@ -13,27 +20,17 @@ dotenv.config();
 const PORT=process.env.PORT || 8000;
 const app=express();
 const server = http.createServer(app);
-const io = initSockets(server)
+const io = initSockets(server);
 
 /** *****************🔴 Section END 🔴*******************/
 
 app.set("view engine","ejs");
 app.set("views",path.resolve("./views"));
-
 // --
 /** *****************🟢 Middleware Section 🟢*******************/
 // --
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/api',router);
 
-
-
-// Routes
-
-app.get('/admin',(req,res)=>{
-    res.render("index")
-});
-app.get("/",(req,res)=>{
-    res.render("home");
-});
-app.listen(PORT,()=>{console.log(`Server Started at ${PORT}`)});
+server.listen(PORT,()=>{console.log(`Server Started at ${PORT}`)});
