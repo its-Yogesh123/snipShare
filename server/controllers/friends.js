@@ -45,7 +45,7 @@ export const makeFriend = (req,res)=>{
     if(!user) user={name:body.name,uid:body.uid};
     if(activeTokens.has(token)){
         const targetUser=activeTokens.get(token);    // get user which have generated the token
-        const target_socket_id=uidTosocket[targetUser.uid];
+        const target_socket_id=uidTosocket.get(targetUser.uid);
         if(target_socket_id && io.sockets.sockets.has(target_socket_id)){
             io.to(target_socket_id).emit("newFriend",user);
             res.status(200).json({"user":targetUser});
