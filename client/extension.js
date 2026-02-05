@@ -2,8 +2,8 @@
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 const {v4:uuid}=require("uuid")
-const FriendManager = require("./friendManager");
-const backend = require("./toServer");
+const FriendManager = require("./controllers/friendManager");
+const backend = require("./controllers/toServer");
 
 /**
  * @param {vscode.ExtensionContext} context
