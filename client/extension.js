@@ -11,9 +11,9 @@ const backend = require("./controllers/toServer");
 function activate(context) {
 	// global data initialization
 	const globalState=context.globalState;
-	const URL = "http://localhost:8000";     // websockets server
-	const tokenURL="http://localhost:8000/api/token";
-	const makeFriendURL="http://localhost:8000/api/friend";
+	const URL = "https://snipshare-server.yolab.in";     // websockets server
+	const tokenURL="https://snipshare-server.yolab.in/api/token";
+	const makeFriendURL="https://snipshare-server.yolab.in/api/friend";
 	// const URL = vscode.workspace.getConfiguration('snipare').get("URL");
 	// const tokenURL=vscode.workspace.getConfiguration('snipare').get("tokenURL");
 	// const makeFriendURL=vscode.workspace.getConfiguration('snipare').get("makeFriendURL");

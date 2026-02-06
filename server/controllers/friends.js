@@ -37,7 +37,7 @@ export const createNewToken = (req,res)=>{
 }
 
 export const makeFriend = (req,res)=>{
-    console.log("Token Generation Request received !!! ");
+    console.log("Make Friend Request received !!! ");
     const body = req.body;
     const token = body.token;
     let user = body.user;
@@ -50,9 +50,9 @@ export const makeFriend = (req,res)=>{
             io.to(target_socket_id).emit("newFriend",user);
             res.status(200).json({"user":targetUser});
         }
-        else res.status(404).json({"error":"No user Found / User is Offline"});
+        else res.status(500).json({"error":"No user Found / User is Offline"});
     }else{
-        res.status(404).json({"status":"Token Expired"});
+        res.status(500).json({"status":"Token Expired"});
     }
 }
 
