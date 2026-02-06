@@ -1,4 +1,4 @@
-[![Version](https://img.shields.io/badge/version-2.1.1-green.svg)](#)
+[![Version](https://img.shields.io/badge/version-3.0.0-green.svg)](#)
 [![VS Code ](https://img.shields.io/badge/VS%20Code->=1.3.x-blue.svg)](https://code.visualstudio.com/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg)](#)
@@ -120,7 +120,17 @@ The file will be sent to the selected friends.
 
 ## Release Notes
 
-### [2.1.1] — 20 Jan 2026
+### [3.0.0] — 06 Feb 2026 - (Highly Recommended)
+
+**High-Reliability & Production Readiness Release**
+- Added message queue–based delivery to support offline users
+- Guaranteed file and code delivery after reconnection
+- Improved deployment pipeline and runtime stability
+- Refactored architecture to an industry-ready structure
+- Added centralized error logging for better diagnostics
+
+---
+### [2.1.0] — 20 Jan 2026 (About to die soon...)
 **Reliability & Quality Release**
 - Improved reliability of file and code receiving
 - Files are received even when no editor is focused

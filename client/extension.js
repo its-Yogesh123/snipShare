@@ -9,14 +9,17 @@ const backend = require("./controllers/toServer");
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-	// global data initialization
+	/************************* Development Section ***********************/
+	
+	// const URL = "https://snipshare-server.yolab.in";     // websockets server
+	// const tokenURL="https://snipshare-server.yolab.in/api/token";
+	// const makeFriendURL="https://snipshare-server.yolab.in/api/friend";
+
+	/*************************🔴 Section End 🔴***********************/
 	const globalState=context.globalState;
-	const URL = "https://snipshare-server.yolab.in";     // websockets server
-	const tokenURL="https://snipshare-server.yolab.in/api/token";
-	const makeFriendURL="https://snipshare-server.yolab.in/api/friend";
-	// const URL = vscode.workspace.getConfiguration('snipare').get("URL");
-	// const tokenURL=vscode.workspace.getConfiguration('snipare').get("tokenURL");
-	// const makeFriendURL=vscode.workspace.getConfiguration('snipare').get("makeFriendURL");
+	const URL = vscode.workspace.getConfiguration('snipare').get("URL");
+	const tokenURL=vscode.workspace.getConfiguration('snipare').get("tokenURL");
+	const makeFriendURL=vscode.workspace.getConfiguration('snipare').get("makeFriendURL");
 	// --
 	let uid=globalState.get("snipShare_uid");
 	let uName = globalState.get("snipare_uName");
@@ -86,7 +89,7 @@ function activate(context) {
 	const sendCodeCommand = vscode.commands.registerCommand("snipare.sendCode",()=>{
 		backend.sendCode(uid,friendManager);
 	});
-	// commands 
+	/************************* Registering Commands ***********************/
 	backend.registerCommands(context);
 	context.subscriptions.push(makeFriendCommand);
 	context.subscriptions.push(blockFriendCommanad);

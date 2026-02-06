@@ -20,9 +20,9 @@
     "configuration":{
       "title": "Servre Data",
       "properties": {
-        "snipare.URL":{"type":"string","description": "Server URL","default": "https://snipshare.yolab.in"},
-        "snipare.tokenURL":{"type":"string","description": "URL to generate tokenURL","default": "https://snipshare.yolab.in/api/token"},
-        "snipare.makeFriendURL":{"type":"string","description": "URL to make Friend","default": "https://snipshare.yolab.in/api/friend"}
+        "snipare.URL":{"type":"string","description": "Server URL","default": "https://snipshare-server.yolab.in"},
+        "snipare.tokenURL":{"type":"string","description": "URL to generate tokenURL","default": "https://snipshare-server.yolab.in/api/token"},
+        "snipare.makeFriendURL":{"type":"string","description": "URL to make Friend","default": "https://snipshare-server.yolab.in/api/friend"}
       }
     },
     "commands": [

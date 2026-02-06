@@ -5,10 +5,29 @@ All notable changes to this project are documented in this file.
 The format follows **Keep a Changelog**,  
 and this project adheres to **Semantic Versioning**.
 
----
-`Major Release Soon...`
----
+## [3.0.0] - 2026-02-06
 
+### Added
+
+- Message queue–based reliability layer to support offline users
+- Guaranteed delivery of files and code once recipients reconnect
+- Centralized error logging system for better debugging and monitoring
+- Improved observability for message processing and delivery failures
+
+### Changed
+
+- Updated deployment pipeline for improved stability and scalability
+- Reworked core architecture to follow industry-ready, production-grade structure
+- Refactored internal modules for better separation of concerns and maintainability
+- Enhanced reliability mechanisms across file and code transfer workflows
+
+### Fixed
+
+- Message and file loss issues when recipients were offline
+- Multiple stability bugs in the previous delivery flow
+- Edge cases caused by tightly coupled components in the old architecture
+
+---
 ## [2.1.0] - 2026-01-14
 
 ### Added
